@@ -23,6 +23,24 @@ unzip RobotoMono.zip -d ~/.local/share/fonts/
 
 fc-cache -fv
 
+pip install wtfis
+pip install pywal
+
+mkdir -p ~/.config/i3
+mkdir -p ~/.config/compton
+mkdir -p ~/.config/rofi
+mkdir -p ~/.config/alacritty
+cp .config/i3/config ~/.config/i3/config
+cp .config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
+cp .config/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
+cp .config/compton/compton.conf ~/.config/compton/compton.conf
+cp .config/rofi/config ~/.config/rofi/config
+cp .fehbg ~/.fehbg
+cp .config/i3/clipboard_fix.sh ~/.config/i3/clipboard_fix.sh
+cp -r .wallpaper ~/.wallpaper 
+sudo cp .wallpaper/* /usr/share/pixmaps/.
+sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
+
 mkdir ~/tools/
 cd ~/tools
 git clone https://github.com/xFreed0m/ADFSpray.git
@@ -44,25 +62,6 @@ git clone https://github.com/dirkjanm/PKINITtools.git
 wget https://github.com/gchq/CyberChef/releases/download/v10.5.2/CyberChef_v10.5.2.zip -O CyberChef.zip
 unzip CyberChef.zip
 
-pip install wtfis
-pip install pywal
-
-mkdir -p ~/.config/i3
-mkdir -p ~/.config/compton
-mkdir -p ~/.config/rofi
-mkdir -p ~/.config/alacritty
-cp .config/i3/config ~/.config/i3/config
-cp .config/alacritty/alacritty.yml ~/.config/alacritty/alacritty.yml
-cp .config/i3/i3blocks.conf ~/.config/i3/i3blocks.conf
-cp .config/compton/compton.conf ~/.config/compton/compton.conf
-cp .config/rofi/config ~/.config/rofi/config
-cp .fehbg ~/.fehbg
-cp .config/i3/clipboard_fix.sh ~/.config/i3/clipboard_fix.sh
-cp -r .wallpaper ~/.wallpaper 
-sudo cp .wallpaper/* /usr/share/pixmaps/.
-sudo cp .config/lightdm/lightdm-gtk-greeter.conf /etc/lightdm/lightdm-gtk-greeter.conf
-
 echo "Done! Grab some wallpaper and run pywal -i filename to set your color scheme. To have the wallpaper set on every boot edit ~.fehbg"
 echo "After reboot: Select i3 on login, run lxappearance and select kali-dark"
-
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
